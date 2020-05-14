@@ -1,0 +1,123 @@
+
+<div class="row my-4">
+    <div class="col-md-6">
+        <h1>New client</h1>
+    </div>
+    <div class="col-md-6 text-right">
+        <a routerLink="/" class="btn btn-link">
+            <i class="fa fa-arrow-left"></i> Back to dashbord
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>New Client</h4>
+
+                <form #formClient="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="">FirstName</label>
+        <input 
+         class="form-control"
+          type="text"
+           name="firstName"
+           [(ngModel)]="client.firstName"
+           #clientFirstName="ngModel"
+           required
+           minlength="4"
+           [ngClass]="{'is-invalid': clientFirstName.errors && clientFirstName.touched}"
+           >
+           <div [hidden]="!clientFirstName.errors?.required" class="invalid-feedback">
+            FirstName is required
+           </div>
+           <div [hidden]="!clientFirstName.errors?.minlength" class="invalid-feedback">
+           must be at  least  2 characters
+           </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">LastName</label>
+        <input 
+         class="form-control"
+          type="text"
+           name="lastName"
+           [(ngModel)]="client.lastName"
+           #clientLastName="ngModel"
+           required
+           minlength="4"
+           [ngClass]="{'is-invalid': clientLastName.errors && clientLastName.touched}"
+           >
+           <div [hidden]="!clientLastName.errors?.required" class="invalid-feedback">
+            LastName is required
+           </div>
+           <div [hidden]="!clientLastName.errors?.minlength" class="invalid-feedback">
+           must be at  least  2 characters
+           </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Email</label>
+        <input 
+         class="form-control"
+          type="email"
+           name="email"
+           [(ngModel)]="client.email"
+           #clientEmail="ngModel"
+           required
+           minlength="4"
+           [ngClass]="{'is-invalid': clientEmail.errors && clientEmail.touched}"
+           >
+           <div [hidden]="!clientEmail.errors?.required" class="invalid-feedback">
+            Email is required
+           </div>
+           <div [hidden]="!clientEmail.errors?.minlength" class="invalid-feedback">
+           must be at  least  2 characters
+           </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Phone</label>
+        <input 
+         class="form-control"
+          type="number"
+           name="phone"
+           [(ngModel)]="client.phone"
+           #clientPhone="ngModel"
+           required
+           minlength="8"
+           [ngClass]="{'is-invalid': clientPhone.errors && clientPhone.touched}"
+           >
+           <div [hidden]="!clientPhone.errors?.required" class="invalid-feedback">
+            Phone is required
+           </div>
+           <div [hidden]="!clientEmail.errors?.minlength" class="invalid-feedback">
+           Verfier la taille 
+            </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Balance</label>
+        <input 
+         class="form-control"
+          type="number"
+           name="balance"
+           [(ngModel)]="client.balance"
+           #clientBalance="ngModel"
+           required
+           [ngClass]="{'is-invalid': clientBalance.errors && clientBalance.touched}"
+           >
+           <div [hidden]="!clientBalance.errors?.required" class="invalid-feedback">
+            Balance is required
+           </div>
+    </div>
+
+<button class="btn btn-primary btn-block" type="submit" [disabled]="!formClient.valid"> submite</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

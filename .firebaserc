@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gestion-de-contact-3396f": {
+      "hosting": {
+        "ClientPanelProject": [
+          "gestion-de-contact-3396f"
+        ]
+      }
+    }
+  }
+}
